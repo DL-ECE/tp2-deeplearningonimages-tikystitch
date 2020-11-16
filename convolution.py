@@ -48,8 +48,8 @@ import tqdm.notebook as tq
 from sklearn.datasets import fetch_openml
 from sklearn.model_selection import train_test_split
 # enable tpu computation
-# !curl https://raw.githubusercontent.com/pytorch/xla/master/contrib/scripts/env-setup.py -o pytorch-xla-env-setup.py
-# !python pytorch-xla-env-setup.py --version nightly --apt-packages libomp5 libopenblas-dev
+#!curl https://raw.githubusercontent.com/pytorch/xla/master/contrib/scripts/env-setup.py -o pytorch-xla-env-setup.py
+#!python pytorch-xla-env-setup.py --version nightly --apt-packages libomp5 libopenblas-dev
 
 # In order to have some reproducable results and easier debugging 
 # we fix the seed of random.
@@ -769,6 +769,10 @@ if __name__ == "__main__":
 
 """## Open Analysis
 Same as TP 1 please write a short description of your experiment
+
+Ma première intuition était d'aumgneter le nombre de layers. Nénamoins,après sans résultat satisfaisant j'ai alors commencer à les diminuer et augmenter le momentum en suivant l'intuition donnée par le site communiqué en cours. 
+
+Après plusieurs essaies à taton l'alliance d'un petit learning rate couplé avec un momentum élevé donne une accuracy plus élevé
 
 # BONUS 
 
