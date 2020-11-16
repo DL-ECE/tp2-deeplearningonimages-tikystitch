@@ -659,10 +659,10 @@ class CNNModel(nn.Module):
     def __init__(self, classes=10):
         super().__init__()
         # YOUR CODE HERE 
-        self.conv1 = torch.nn.Conv2d(1,150,kernel_size=3,padding = 2)
-        self.conv2 = torch.nn.Conv2d(150,125,kernel_size=3,padding = 1)
-        self.conv3 = torch.nn.Conv2d(125,100,kernel_size=3,padding = 1)
-        self.conv4 = torch.nn.Conv2d(100,50,kernel_size=3,padding = 1)
+        self.conv1 = torch.nn.Conv2d(1,170,kernel_size=3,padding = 1)
+        self.conv2 = torch.nn.Conv2d(170,135,kernel_size=3,padding = 1)
+        self.conv3 = torch.nn.Conv2d(135,110,kernel_size=3,padding = 1)
+        self.conv4 = torch.nn.Conv2d(110,50,kernel_size=3,padding = 1)
 
         self.maxpool =  nn.MaxPool2d(2,2)
 
@@ -741,8 +741,8 @@ if __name__ == "__main__":
     
     # Network Hyperparameters 
     # YOUR CODE HERE 
-    minibatch_size = 20
-    nepoch = 30
+    minibatch_size = 28
+    nepoch = 28
     learning_rate = 0.001
     momentum = 0.9
 
@@ -772,7 +772,9 @@ Same as TP 1 please write a short description of your experiment
 
 Ma première intuition était d'aumgneter le nombre de layers. Nénamoins,après sans résultat satisfaisant j'ai alors commencer à les diminuer et augmenter le momentum en suivant l'intuition donnée par le site communiqué en cours. 
 
-Après plusieurs essaies à taton l'alliance d'un petit learning rate couplé avec un momentum élevé donne une accuracy plus élevé
+Après plusieurs essaies à taton l'alliance d'un petit learning rate couplé avec un momentum élevé donne une accuracy plus élevé. 
+
+Paralèllement, si le batch size augmente aussi l'accuracy il permet de traiter plus données.
 
 # BONUS 
 
